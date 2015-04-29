@@ -18,8 +18,9 @@ $artistContent = $_POST["artistContent"];
 insertArtist($artistName, $artistContentSummary, $artistContent);
 createArtistPage($artistName, $artistContent);
 
-function insertArtist($name, $summary, $content) {.
-	"INSERT INTO artistTable VALUES($name, $summary, $content)";
+function insertArtist($name, $summary, $content) {
+	$insertInto = "INSERT INTO artistTable VALUES($name, $summary, $content)";
+    $result = $dbh->exec($insertInto);
 }
 
 function createArtistPage($name, $content) {
