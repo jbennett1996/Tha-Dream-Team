@@ -1,0 +1,36 @@
+<?php
+include("dbconnect.php")
+?>
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert Form Handler</title>
+</head>
+
+<body>
+<?php
+$artistName = $_POST["artistName"];
+$artistContentSummary = $_POST["artistContentSummary"];
+$artistContent = $_POST["artistContent"];
+
+insertArtist($artistName, $artistContentSummary, $artistContent);
+createArtistPage($artistName, $artistContent);
+
+function insertArtist($name, $summary, $content) {.
+	"INSERT INTO artistTable VALUES($name, $summary, $content)";
+}
+
+function createArtistPage($name, $content) {
+	$initialiseArtistPage = fopen("$name.html", "w");
+	fwrite($initialiseArtistPage, $name);
+	fwrite($initialiseArtistPage, $content);
+	fclose($initialiseArtistPage);
+}
+?>
+
+
+
+</body>
+</html>
