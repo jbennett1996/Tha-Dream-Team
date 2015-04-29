@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Add A New Artist</title>
+</head>
+
+<body>
+<form action="insertFormHandler.php" method="post">
+	Artist Name:
+	<input type="text" name="artistName">
+	<br>
+	Artist Content Summary:
+	<input type="text" name="artistContentSummary">
+	<br>
+	Artist Content:
+	<input type="text" name="artistContent">
+	<input type="submit" value="Submit">
+</form>
+</body>
+</html>
